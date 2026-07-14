@@ -13,6 +13,7 @@ import SettingsModal from '../components/SettingsModal';
 import LeaderboardModal from '../components/LeaderboardModal';
 import AchievementsModal from '../components/AchievementsModal';
 import Tutorial from '../components/Tutorial';
+import LegalPages from '../components/LegalPages';
 import { Category, Difficulty } from '../utils/mathEngine';
 import { QuestLevel, generateQuestMapData } from '../utils/questConfig';
 import { FaPlay, FaMapMarkedAlt, FaGamepad, FaCalendarDay, FaChartBar, FaUserLock, FaTrophy, FaAward, FaCog, FaBookOpen } from 'react-icons/fa';
@@ -33,7 +34,7 @@ export default function Home() {
   const [activeModal, setActiveModal] = useState<'settings' | 'leaderboard' | 'achievements' | null>(null);
 
   // Active view states
-  const [view, setView] = useState<'home' | 'levels' | 'quest' | 'play' | 'parent' | 'tutorial'>('home');
+  const [view, setView] = useState<'home' | 'levels' | 'quest' | 'play' | 'parent' | 'tutorial' | 'about' | 'privacy' | 'terms' | 'contact' | 'faq'>('home');
   const [activeMode, setActiveMode] = useState<'levels' | 'practice' | 'time' | 'endless' | 'daily' | 'speed' | 'zen'>('zen');
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>('easy');
   const [selectedLevel, setSelectedLevel] = useState<number>(1);
@@ -333,6 +334,15 @@ export default function Home() {
               })}
             </div>
           </div>
+
+          {/* Footer links drawer for crawler indexation */}
+          <footer className="w-full border-t border-slate-800/80 pt-6 flex flex-wrap justify-center gap-6 text-xs text-slate-500 font-bold">
+            <button onClick={() => setView('about')} className="hover:text-slate-300 transition-all">About Game</button>
+            <button onClick={() => setView('privacy')} className="hover:text-slate-300 transition-all">Privacy Policy</button>
+            <button onClick={() => setView('terms')} className="hover:text-slate-300 transition-all">Terms of Service</button>
+            <button onClick={() => setView('contact')} className="hover:text-slate-300 transition-all">Contact Support</button>
+            <button onClick={() => setView('faq')} className="hover:text-slate-300 transition-all">Math FAQ</button>
+          </footer>
         </div>
       )}
 
@@ -397,6 +407,17 @@ export default function Home() {
             onBack={() => setView('home')}
             onWin={handleGameWin}
             onLose={handleGameLose}
+            translations={t}
+          />
+        </div>
+      )}
+
+      {/* Legal Subpages */}
+      {(['about', 'privacy', 'terms', 'contact', 'faq'] as const).includes(view as 'about' | 'privacy' | 'terms' | 'contact' | 'faq') && (
+        <div className="z-10 py-6">
+          <LegalPages
+            page={view as 'about' | 'privacy' | 'terms' | 'contact' | 'faq'}
+            onBack={() => setView('home')}
             translations={t}
           />
         </div>

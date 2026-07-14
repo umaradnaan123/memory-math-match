@@ -1,7 +1,7 @@
 {
-  "name": "Memory Math Match",
-  "short_name": "MathMatch",
-  "description": "Improve your mathematics skills by matching equations with their correct answers.",
+  "name": "Memory Math Match – Free Online Math Memory Game for Kids",
+  "short_name": "MemoryMath",
+  "description": "Play Memory Math Match, a free online educational game where you match math equations with answers. Improve memory, arithmetic, and problem-solving skills.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",

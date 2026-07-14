@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://memory-math-match.vercel.app/sitemap.xml
