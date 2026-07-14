@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
-import { getLocalStats, saveLocalStats, getLocalAchievements, getLeaderboards, addLeaderboardEntry, updateTopicAccuracy, GameStats, Achievement } from '../utils/gameData';
+import { getLocalStats, saveLocalStats, getLocalAchievements, getLeaderboards, addLeaderboardEntry, GameStats, Achievement } from '../utils/gameData';
 import { translations, Language } from '../utils/translations';
 import { startBackgroundMusic, stopBackgroundMusic } from '../utils/audioSynth';
 import GameView from '../components/GameView';
@@ -15,8 +14,8 @@ import AchievementsModal from '../components/AchievementsModal';
 import Tutorial from '../components/Tutorial';
 import LegalPages from '../components/LegalPages';
 import { Category, Difficulty } from '../utils/mathEngine';
-import { QuestLevel, generateQuestMapData } from '../utils/questConfig';
-import { FaPlay, FaMapMarkedAlt, FaGamepad, FaCalendarDay, FaChartBar, FaUserLock, FaTrophy, FaAward, FaCog, FaBookOpen } from 'react-icons/fa';
+import { QuestLevel } from '../utils/questConfig';
+import { FaPlay, FaMapMarkedAlt, FaGamepad, FaCalendarDay, FaChartBar, FaTrophy, FaAward, FaCog, FaBookOpen } from 'react-icons/fa';
 
 export default function Home() {
   // Application settings and configurations
@@ -369,7 +368,6 @@ export default function Home() {
           <LevelMap
             unlockedLevel={stats.unlockedLevel}
             onSelectLevel={handleLevelSelect}
-            lang={lang}
             translations={t}
           />
         </div>
@@ -403,7 +401,6 @@ export default function Home() {
             soundEnabled={soundEnabled}
             reducedMotion={reducedMotion}
             largeText={largeText}
-            colorBlindMode={colorBlindMode}
             onBack={() => setView('home')}
             onWin={handleGameWin}
             onLose={handleGameLose}

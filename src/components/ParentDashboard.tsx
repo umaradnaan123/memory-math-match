@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React from 'react';
 import { GameStats } from '../utils/gameData';
 import { FaPrint, FaAward, FaChartLine, FaCheckCircle } from 'react-icons/fa';
 
@@ -10,8 +10,6 @@ interface ParentDashboardProps {
 }
 
 export default function ParentDashboard({ stats, translations }: ParentDashboardProps) {
-  const printRef = useRef<HTMLDivElement>(null);
-
   const handlePrint = () => {
     window.print();
   };

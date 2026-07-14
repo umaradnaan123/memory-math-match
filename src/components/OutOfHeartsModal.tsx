@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaHeart, FaVideo, FaRedo, FaMap, FaTimes } from 'react-icons/fa';
+import { FaHeart, FaVideo, FaRedo, FaMap } from 'react-icons/fa';
 
 interface OutOfHeartsModalProps {
   isOpen: boolean;
@@ -10,7 +9,6 @@ interface OutOfHeartsModalProps {
   onRestart: () => void;
   onBackToMap: () => void;
   adInProgress: boolean;
-  lives: number;
 }
 
 export default function OutOfHeartsModal({
@@ -19,7 +17,6 @@ export default function OutOfHeartsModal({
   onRestart,
   onBackToMap,
   adInProgress,
-  lives,
 }: OutOfHeartsModalProps) {
   if (!isOpen) return null;
 

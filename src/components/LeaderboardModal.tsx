@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTimes, FaTrophy, FaCalendarCheck, FaGlobe } from 'react-icons/fa';
+import { FaTimes, FaTrophy } from 'react-icons/fa';
 import { LeaderboardEntry } from '../utils/gameData';
 
 interface LeaderboardModalProps {

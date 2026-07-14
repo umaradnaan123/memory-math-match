@@ -2,8 +2,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { WORLDS, QuestLevel, generateQuestMapData, World } from '../utils/questConfig';
-import { FaLock, FaStar, FaChevronLeft, FaCoins, FaAward, FaSearchPlus, FaSearchMinus } from 'react-icons/fa';
+import { WORLDS, QuestLevel, generateQuestMapData } from '../utils/questConfig';
+import { FaLock, FaStar, FaChevronLeft, FaSearchPlus, FaSearchMinus } from 'react-icons/fa';
 
 interface QuestMapProps {
   unlockedLevel: number;

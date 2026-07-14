@@ -6,7 +6,7 @@ import { MathCard, generateMathPairs, Category, Difficulty } from '../utils/math
 import { playSound } from '../utils/audioSynth';
 import Card from './Card';
 import OutOfHeartsModal from './OutOfHeartsModal';
-import { FaClock, FaHeart, FaChevronLeft, FaLightbulb, FaSnowflake, FaRandom, FaBolt } from 'react-icons/fa';
+import { FaClock, FaHeart, FaChevronLeft, FaLightbulb, FaSnowflake } from 'react-icons/fa';
 
 interface GameViewProps {
   mode: 'levels' | 'practice' | 'time' | 'endless' | 'daily' | 'speed' | 'zen';
@@ -31,7 +31,6 @@ export default function GameView({
   soundEnabled,
   reducedMotion,
   largeText,
-  colorBlindMode,
   onBack,
   onWin,
   onLose,
@@ -165,7 +164,7 @@ export default function GameView({
     const newCards = generateMathPairs(difficulty, activeCats, pairCount);
     setCards(newCards);
     setTimeLeft(mode === 'practice' || mode === 'zen' ? 9999 : initTime);
-  }, [difficulty, enabledCategories, pairCount, mode]);
+  }, [difficulty, enabledCategories, pairCount, mode, initTime]);
 
   // Game Countdown Timer loop
   useEffect(() => {
@@ -187,7 +186,7 @@ export default function GameView({
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, timerActive, freezeActive, mode, soundEnabled]);
+  }, [timeLeft, timerActive, freezeActive, mode, soundEnabled, onLose]);
 
   // Matching Logic
   const handleCardClick = (id: string) => {
@@ -347,14 +346,12 @@ export default function GameView({
 
         {/* HUD Statistics */}
         <div className="flex flex-wrap items-center gap-6 text-sm">
-          {mode !== 'practice' && mode !== 'zen' && (
-            <div className="flex items-center space-x-2 bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">
-              <FaClock className={timeLeft < 15 ? 'text-red-500 animate-pulse' : 'text-blue-400'} />
-              <span className={`font-black text-lg ${timeLeft < 15 ? 'text-red-400' : 'text-slate-100'}`}>
-                {timeLeft}s
-              </span>
-            </div>
-          )}
+          <div className="flex items-center space-x-2 bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">
+            <FaClock className={(mode !== 'practice' && mode !== 'zen' && timeLeft < 15) ? 'text-red-500 animate-pulse' : 'text-blue-400'} />
+            <span className={`font-black text-lg ${(mode !== 'practice' && mode !== 'zen' && timeLeft < 15) ? 'text-red-400' : 'text-slate-100'}`}>
+              {(mode === 'practice' || mode === 'zen') ? '∞' : `${timeLeft}s`}
+            </span>
+          </div>
 
           {mode !== 'practice' && mode !== 'zen' && (
             <div className="flex items-center space-x-2 bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">
@@ -395,7 +392,6 @@ export default function GameView({
             onClick={() => handleCardClick(card.id)}
             reducedMotion={reducedMotion}
             largeText={largeText}
-            colorBlindMode={colorBlindMode}
           />
         ))}
       </div>
@@ -426,7 +422,6 @@ export default function GameView({
       <OutOfHeartsModal
         isOpen={showHeartsModal}
         adInProgress={adInProgress}
-        lives={lives}
         onWatchAd={handleWatchAd}
         onRestart={handleRestartLevel}
         onBackToMap={onBack}

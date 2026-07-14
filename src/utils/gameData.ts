@@ -1,4 +1,4 @@
-import { Category, Difficulty } from './mathEngine';
+// Game storage data configurations
 
 export interface GameStats {
   gamesPlayed: number;

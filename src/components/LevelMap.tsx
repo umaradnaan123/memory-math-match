@@ -7,11 +7,10 @@ import { FaLock, FaStar } from 'react-icons/fa';
 interface LevelMapProps {
   unlockedLevel: number;
   onSelectLevel: (level: number) => void;
-  lang: string;
   translations: Record<string, string>;
 }
 
-export default function LevelMap({ unlockedLevel, onSelectLevel, lang, translations }: LevelMapProps) {
+export default function LevelMap({ unlockedLevel, onSelectLevel, translations }: LevelMapProps) {
   // Generate 200 Levels grouped into categories/topics
   const categories = [
     { name: 'Addition & Subtraction', start: 1, end: 40 },

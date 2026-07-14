@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Language, translations } from '../utils/translations';
-import { FaTimes, FaGlobe, FaVolumeUp, FaVolumeMute, FaPalette, FaTrashAlt } from 'react-icons/fa';
+import { FaTimes, FaGlobe, FaVolumeUp, FaPalette, FaTrashAlt } from 'react-icons/fa';
 
 interface SettingsModalProps {
   isOpen: boolean;

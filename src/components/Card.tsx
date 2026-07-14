@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { motion } from 'framer-motion';
 import { MathCard } from '../utils/mathEngine';
 
@@ -12,7 +11,6 @@ interface CardProps {
   onClick: () => void;
   reducedMotion: boolean;
   largeText: boolean;
-  colorBlindMode: 'none' | 'deuteranopia' | 'protanopia' | 'tritanopia';
 }
 
 export default function Card({
@@ -23,7 +21,6 @@ export default function Card({
   onClick,
   reducedMotion,
   largeText,
-  colorBlindMode,
 }: CardProps) {
   // Determine text sizes based on preferences
   const textSize = largeText ? 'text-2xl md:text-3xl' : 'text-lg md:text-xl';
