@@ -25,6 +25,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://memory-math-match.vercel.app/"
   },
+  verification: {
+    google: "3HnqK-VdYSw0Gvki7SZizE2J_mdws5GCxxGC8AmkTgA",
+    yandex: "86231a68707a6747",
+    other: {
+      "msvalidate.01": "09C7A42C92C510395B16F0393F057D6C"
+    }
+  },
   openGraph: {
     title: "Memory Math Match",
     description: "Improve your math skills with an interactive memory matching game.",
