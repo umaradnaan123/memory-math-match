@@ -346,10 +346,13 @@ export default function GameView({
 
         {/* HUD Statistics */}
         <div className="flex flex-wrap items-center gap-6 text-sm">
-          <div className="flex items-center space-x-2 bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">
-            <FaClock className={(mode !== 'practice' && mode !== 'zen' && timeLeft < 15) ? 'text-red-500 animate-pulse' : 'text-blue-400'} />
-            <span className={`font-black text-lg ${(mode !== 'practice' && mode !== 'zen' && timeLeft < 15) ? 'text-red-400' : 'text-slate-100'}`}>
-              {(mode === 'practice' || mode === 'zen') ? '∞' : `${timeLeft}s`}
+          <div 
+            className="flex items-center space-x-2 bg-slate-800 px-4 py-2 rounded-xl border border-slate-700"
+            aria-label={(mode === 'practice' || mode === 'zen' || timeLeft >= 9999) ? "Unlimited Time" : `${timeLeft} seconds remaining`}
+          >
+            <FaClock className={(mode !== 'practice' && mode !== 'zen' && timeLeft < 15 && timeLeft < 9999) ? 'text-red-500 animate-pulse' : 'text-blue-400'} />
+            <span className={`font-black text-lg ${(mode !== 'practice' && mode !== 'zen' && timeLeft < 15 && timeLeft < 9999) ? 'text-red-400' : 'text-slate-100'}`}>
+              {(mode === 'practice' || mode === 'zen' || timeLeft >= 9999) ? '∞' : `${timeLeft}s`}
             </span>
           </div>
 
