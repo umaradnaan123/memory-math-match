@@ -16,7 +16,6 @@ interface GameViewProps {
   soundEnabled: boolean;
   reducedMotion: boolean;
   largeText: boolean;
-  colorBlindMode: 'none' | 'deuteranopia' | 'protanopia' | 'tritanopia';
   onBack: () => void;
   onWin: (score: number, accuracy: number, timeSpent: number) => void;
   onLose: () => void;
