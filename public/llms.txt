@@ -1,0 +1,24 @@
+# Memory Math Match
+
+Memory Math Match is a free, web-based educational game combining memory matching with math challenges.
+
+## Routes
+- `/`: Main game lobby and settings selection.
+- `/play`: Play page (supports `mode=practice` and `mode=time`).
+- `/levels`: Map view with 1000+ levels for quest progression.
+- `/daily-challenge`: Specialized daily matching challenge.
+- `/blog`: Blog listing page for math, memory, early childhood, and classroom configurations.
+- `/about`: About the game.
+- `/faq`: Frequently asked questions.
+- `/how-to-play`: Instructions on gameplay.
+- `/privacy-policy`: Privacy policy page.
+- `/terms`: Terms of service page.
+- `/contact`: Contact details.
+
+## Informational pages:
+- `/benefits-of-memory-games`
+- `/benefits-of-mental-math`
+- `/daily-brain-training`
+- `/improve-concentration`
+- `/boost-iq-with-games`
+- `/memory-improvement-techniques`

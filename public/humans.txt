@@ -1,0 +1,12 @@
+/* TEAM */
+Chef Architect / Developer: Technical SEO Expert
+Twitter: @memorymathmatch
+From: Earth
+
+/* THANKS */
+To our users, teachers, and parents who use Memory Math Match daily.
+
+/* SITE */
+Standards: HTML5, CSS3, ESNext
+Components: Next.js App Router, Tailwind CSS, React
+Software: TypeScript, ESLint

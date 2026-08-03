@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GameSettingsProvider } from "@/context/GameSettingsContext";
+import CookieConsent from "@/components/CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,6 +69,7 @@ export default function RootLayout({
       >
         <GameSettingsProvider>
           {children}
+          <CookieConsent />
         </GameSettingsProvider>
         <script
           type="application/ld+json"
