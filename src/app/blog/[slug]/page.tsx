@@ -5,7 +5,7 @@ import { blogPosts } from "@/utils/blogData";
 import { Metadata } from "next";
 
 interface Props {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
