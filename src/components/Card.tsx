@@ -43,9 +43,10 @@ export default function Card({
       aria-pressed={isSelected}
     >
       <motion.div
-        className="w-full h-full duration-500 preserve-3d relative rounded-2xl shadow-xl transition-all"
+        className="w-full h-full preserve-3d relative rounded-2xl shadow-xl"
         animate={reducedMotion ? {} : (showFront ? 'front' : 'back')}
         variants={reducedMotion ? undefined : flipVariants}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
         style={{ transform: reducedMotion ? 'none' : undefined }}
       >
         {/* Front Side (Expression/Value) */}

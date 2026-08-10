@@ -383,7 +383,7 @@ export default function GameView({
       </div>
 
       {/* Main Grid of cards */}
-      <div className={`grid ${gridStyle} gap-4 py-4 max-w-4xl mx-auto justify-center`}>
+      <div className={`grid ${gridStyle} gap-4 py-4 max-w-4xl mx-auto justify-center min-h-[360px] md:min-h-[480px]`}>
         {cards.map((card) => (
           <Card
             key={card.id}
