@@ -10,6 +10,7 @@ import LeaderboardModal from '../components/LeaderboardModal';
 import AchievementsModal from '../components/AchievementsModal';
 import Tutorial from '../components/Tutorial';
 import { Category } from '../utils/mathEngine';
+import { GameStats } from '../utils/gameData';
 import {
   FaPlay,
   FaMapMarkedAlt,
@@ -39,16 +40,28 @@ export default function Home() {
   const [view, setView] = useState<'home' | 'parent' | 'tutorial'>('home');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
-  if (!settings.stats) {
-    return (
-      <main className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <div className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
-          <p className="text-slate-400 font-bold">Loading Dashboard...</p>
-        </div>
-      </main>
-    );
-  }
+  // Use fallback stats during SSR or before hydration completes
+  const stats: GameStats = settings.stats || {
+    gamesPlayed: 0,
+    gamesWon: 0,
+    highestScore: 0,
+    bestTime: 9999,
+    averageAccuracy: 0,
+    fastestMatch: 999,
+    currentStreak: 0,
+    longestStreak: 0,
+    perfectGames: 0,
+    coins: 50,
+    xp: 0,
+    stars: 0,
+    diamonds: 5,
+    unlockedLevel: 1,
+    unlockedThemes: ['classic'],
+    unlockedAvatars: ['avatar1'],
+    unlockedCardStyles: ['neon'],
+    unlockedBackgrounds: ['space'],
+    accuracyByTopic: {},
+  };
 
   const toggleCategory = (cat: Category) => {
     settings.setEnabledCategories((prev) =>
@@ -116,15 +129,15 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-3 md:gap-6 max-w-lg mx-auto text-center bg-slate-900/50 p-4 rounded-2xl border border-slate-800 backdrop-blur-sm">
               <div>
                 <div className="text-slate-500 text-xs font-bold uppercase tracking-wider">Coins</div>
-                <div className="text-xl md:text-2xl font-black text-amber-400">{settings.stats.coins} 🪙</div>
+                <div className="text-xl md:text-2xl font-black text-amber-400">{stats.coins} 🪙</div>
               </div>
               <div>
                 <div className="text-slate-500 text-xs font-bold uppercase tracking-wider">XP</div>
-                <div className="text-xl md:text-2xl font-black text-blue-400">{settings.stats.xp} ✨</div>
+                <div className="text-xl md:text-2xl font-black text-blue-400">{stats.xp} ✨</div>
               </div>
               <div>
                 <div className="text-slate-500 text-xs font-bold uppercase tracking-wider">Quest Level</div>
-                <div className="text-xl md:text-2xl font-black text-purple-400">Lvl {settings.stats.unlockedLevel} 🏆</div>
+                <div className="text-xl md:text-2xl font-black text-purple-400">Lvl {stats.unlockedLevel} 🏆</div>
               </div>
             </div>
 
@@ -628,7 +641,7 @@ export default function Home() {
           >
             <span>&larr; Back to Home</span>
           </button>
-          <ParentDashboard stats={settings.stats} translations={settings.t} />
+          <ParentDashboard stats={stats} translations={settings.t} />
         </div>
       )}
 

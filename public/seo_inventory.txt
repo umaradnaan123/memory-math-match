@@ -1,0 +1,137 @@
+================================================================================
+MEMORY MATH MATCH - WEBSITE ROUTE AUDIT AND SEO URL INVENTORY
+================================================================================
+Generated: 2026-08-25
+Domain Target: https://memory-math-match.vercel.app
+
+This document provides a comprehensive route inventory, classification,
+canonical absolute mapping, and search intent classification for the 18+ routes
+in the Memory Math Match repository.
+
+--------------------------------------------------------------------------------
+ROUTE AUDIT INVENTORY:
+--------------------------------------------------------------------------------
+
+1. Route: / (Homepage)
+   - Status Code: 200 OK
+   - Indexation: INDEX
+   - Canonical URL: https://memory-math-match.vercel.app/
+   - Search Intent: Primary navigational and informational landing page. Target keywords: free online math memory game, educational memory game, kids math game.
+   - Crawlability: High (Loading Dashboard shell bypassed for pre-render).
+
+2. Route: /about
+   - Status Code: 200 OK
+   - Indexation: INDEX
+   - Canonical URL: https://memory-math-match.vercel.app/about
+   - Search Intent: Brand authority and pedagogy explanation. Key focus: cognitive benefits, offline capabilities, and adaptive progression.
+
+3. Route: /benefits-of-memory-games
+   - Status Code: 200 OK
+   - Indexation: INDEX
+   - Canonical URL: https://memory-math-match.vercel.app/benefits-of-memory-games
+   - Search Intent: Informational / Scientific research. Explains the cognitive development, neuroplasticity, and memory enhancement benefits for young children.
+
+4. Route: /benefits-of-mental-math
+   - Status Code: 200 OK
+   - Indexation: INDEX
+   - Canonical URL: https://memory-math-match.vercel.app/benefits-of-mental-math
+   - Search Intent: Informational. Focuses on mental arithmetic speed, accuracy, and working memory performance.
+
+5. Route: /boost-iq-with-games
+   - Status Code: 200 OK
+   - Indexation: INDEX
+   - Canonical URL: https://memory-math-match.vercel.app/boost-iq-with-games
+   - Search Intent: Informational / Pedagogical. Looks at how gamification, logical puzzles, and matching games boost IQ metrics.
+
+6. Route: /contact
+   - Status Code: 200 OK
+   - Indexation: INDEX
+   - Canonical URL: https://memory-math-match.vercel.app/contact
+   - Search Intent: Support and partnership requests. Target audience: parents, teachers, school administrators.
+
+7. Route: /daily-brain-training
+   - Status Code: 200 OK
+   - Indexation: INDEX
+   - Canonical URL: https://memory-math-match.vercel.app/daily-brain-training
+   - Search Intent: Habit building / Informational. Educational guidelines on daily cognitive training loops.
+
+8. Route: /daily-challenge
+   - Status Code: 200 OK
+   - Indexation: NOINDEX
+   - Canonical URL: https://memory-math-match.vercel.app/daily-challenge
+   - Search Intent: Interactive game entrance. Since this has highly volatile daily boards and interactive dynamic state, it is set to noindex.
+
+9. Route: /faq
+   - Status Code: 200 OK
+   - Indexation: INDEX
+   - Canonical URL: https://memory-math-match.vercel.app/faq
+   - Search Intent: Customer support / FAQ query answering. Features integrated FAQ JSON-LD schemas.
+
+10. Route: /how-to-play
+    - Status Code: 200 OK
+    - Indexation: INDEX
+    - Canonical URL: https://memory-math-match.vercel.app/how-to-play
+    - Search Intent: Instructional / Navigational. Explains layout mechanics, card pairings, campaign rules, and coin systems.
+
+11. Route: /improve-concentration
+    - Status Code: 200 OK
+    - Indexation: INDEX
+    - Canonical URL: https://memory-math-match.vercel.app/improve-concentration
+    - Search Intent: Informational. Practical recommendations on extending student attention spans, visual tracking, and focus levels.
+
+12. Route: /levels
+    - Status Code: 200 OK
+    - Indexation: INDEX
+    - Canonical URL: https://memory-math-match.vercel.app/levels
+    - Search Intent: Dashboard navigation. Allows players to view level selection maps (1,000+ levels) and campaign maps.
+
+13. Route: /memory-improvement-techniques
+    - Status Code: 200 OK
+    - Indexation: INDEX
+    - Canonical URL: https://memory-math-match.vercel.app/memory-improvement-techniques
+    - Search Intent: Educational / Academic. Details techniques like chunking, visual association, and spaced repetition.
+
+14. Route: /play
+    - Status Code: 200 OK
+    - Indexation: NOINDEX
+    - Canonical URL: https://memory-math-match.vercel.app/play
+    - Search Intent: Direct interactive gaming arena. It is a highly dynamic interface rendering HTML5 Canvas elements and React loops; set to noindex to prevent crawlers indexation of state mismatches.
+
+15. Route: /privacy-policy
+    - Status Code: 200 OK
+    - Indexation: INDEX
+    - Canonical URL: https://memory-math-match.vercel.app/privacy-policy
+    - Search Intent: Legal compliance. Crucial for COPPA and school safety audits.
+
+16. Route: /terms
+    - Status Code: 200 OK
+    - Indexation: INDEX
+    - Canonical URL: https://memory-math-match.vercel.app/terms
+    - Search Intent: Legal compliance. Terms of Service.
+
+17. Route: /blog
+    - Status Code: 200 OK
+    - Indexation: INDEX
+    - Canonical URL: https://memory-math-match.vercel.app/blog
+    - Search Intent: Directory of articles. Resource hub listing all educational topics.
+
+18. Route: /blog/[slug] (Dynamic Articles)
+    - Status Code: 200 OK
+    - Indexation: INDEX
+    - Canonical URL: https://memory-math-match.vercel.app/blog/[slug]
+    - Search Intent: Specific informational queries on educational gamification, classroom tech, and memory match pedagogy.
+    - Dynamic slugs currently pre-rendered:
+      - /blog/best-memory-games-for-kids-cognitive-benefits-rules
+      - /blog/how-memory-games-improve-learning-focus-classrooms
+      - /blog/fun-ways-to-learn-mathematics-gamification-pedagogy
+
+--------------------------------------------------------------------------------
+SUMMARY STATISTICS:
+--------------------------------------------------------------------------------
+Total Identified Unique Routes: 18
+Total INDEX Targets: 16
+Total NOINDEX Targets: 2 (/play, /daily-challenge)
+Total REDIRECTS: 0
+Total 404 Targets: 0 (Custom 404 handler)
+Domain Authority Base: https://memory-math-match.vercel.app
+================================================================================

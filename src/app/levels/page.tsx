@@ -6,6 +6,7 @@ import { useGameSettings } from '@/context/GameSettingsContext';
 import LevelMap from '@/components/LevelMap';
 import QuestMap from '@/components/QuestMap';
 import { QuestLevel } from '@/utils/questConfig';
+import { GameStats } from '@/utils/gameData';
 import { FaChevronLeft, FaMapMarkedAlt, FaGamepad } from 'react-icons/fa';
 
 export default function LevelsPage() {
@@ -13,13 +14,28 @@ export default function LevelsPage() {
   const settings = useGameSettings();
   const [subView, setSubView] = useState<'levels' | 'quest'>('levels');
 
-  if (!settings.stats) {
-    return (
-      <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center">
-        Loading levels...
-      </div>
-    );
-  }
+  // Use fallback stats during SSR or before hydration completes
+  const stats: GameStats = settings.stats || {
+    gamesPlayed: 0,
+    gamesWon: 0,
+    highestScore: 0,
+    bestTime: 9999,
+    averageAccuracy: 0,
+    fastestMatch: 999,
+    currentStreak: 0,
+    longestStreak: 0,
+    perfectGames: 0,
+    coins: 50,
+    xp: 0,
+    stars: 0,
+    diamonds: 5,
+    unlockedLevel: 1,
+    unlockedThemes: ['classic'],
+    unlockedAvatars: ['avatar1'],
+    unlockedCardStyles: ['neon'],
+    unlockedBackgrounds: ['space'],
+    accuracyByTopic: {},
+  };
 
   const handleLevelSelect = (lvl: number) => {
     let diff = 'easy';
@@ -89,13 +105,13 @@ export default function LevelsPage() {
       <div className="z-10 py-2">
         {subView === 'levels' ? (
           <LevelMap
-            unlockedLevel={settings.stats.unlockedLevel}
+            unlockedLevel={stats.unlockedLevel}
             onSelectLevel={handleLevelSelect}
             translations={settings.t}
           />
         ) : (
           <QuestMap
-            unlockedLevel={settings.stats.unlockedLevel}
+            unlockedLevel={stats.unlockedLevel}
             onSelectLevel={handleQuestLevelSelect}
             onBack={() => router.push('/')}
             translations={settings.t}
